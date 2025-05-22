@@ -1,0 +1,130 @@
+TEST REPORT – PROJECT J
+
+Client: Internal Project
+
+Project Name: PROJECT J – Jumia NG Website Evaluation
+
+Testing Type: Exploratory Testing
+
+Test Period**: 27th March 2023, 12:05 PM – 3:30 PM
+
+Tested Platform: Windows 10, Google Chrome Version 111.0.5563.111 (64-bit)
+
+Tested URL: [https://www.jumia.com.ng](https://www.jumia.com.ng)
+
+1. Overview
+
+As part of PROJECT J, exploratory testing was conducted on the Jumia Nigeria website to evaluate the **user experience**, accessibility, and interactive flow from a typical end-user perspective.
+
+The purpose of this test was to simulate natural user interaction, identify usability issues, and provide feedback that may impact user satisfaction and accessibility.
+
+The findings were documented in Microsoft Word and Excel formats and include the following:
+
+* Issues encountered during user interaction.
+* Steps to reproduce defects.
+* Device/browser details.
+* Date and time of issue detection.
+* Screenshots as evidence, where applicable.
+
+
+2. Scope of Testing
+
+Key Considerations:
+
+* User Experience** (Navigation, Responsiveness)
+* User Interaction** (Click flows, Forms, Navigation Buttons)
+* Accessibility Compliance** (WCAG 2.1, AA level standards)
+* Target Audience Needs**
+
+Out-of-Scope Activities:
+
+* Form submissions (login, checkout, etc.)
+* Security/Penetration testing
+* Load and performance testing beyond user-side observations
+* Testing outside the domain `https://www.jumia.com.ng`
+
+
+3. Testing Results
+
+3.1 General Performance
+
+| Metric                     | Observation                      |
+| -------------------------- | -------------------------------- |
+| Page Load Time (Initial)   | 1.093 seconds (Good)             |
+| Page Load on Slow Networks | \~10 seconds (DOM heavy pages)   |
+| Responsiveness             | Optimized for mobile and desktop |
+
+Although the page performs well under optimal conditions, a large DOM size causes **increased memory usage, which can lead to slower load times for users on slower internet connections.
+
+
+
+3.2 Accessibility and UI Observations.
+
+Using tools such as Google Lighthouse, WAVE, WebAIM, and **Axe Accessibility, the following issues were identified:
+
+Accessibility Errors
+
+| Type                        | Count | Description                                                    |
+| --------------------------- | ----- | -------------------------------------------------------------- |
+| Linked Images Missing `alt` | 24    | Screen readers cannot interpret these.                         |
+| Empty Form Label            | 1     | Users with assistive tools cannot understand the form's purpose. |
+| Empty Heading Tags          | 4     | Reduces semantic meaning and navigation accessibility.         |
+
+Contrast Errors
+
+* 15 instances of low contrast text, which hinder visibility for users with low vision or visual impairments.
+* Most affected elements involve text on background color combinations that do not meet minimum AA contrast ratios.
+
+Structural Issues (HTML Semantics)
+
+| Structural Problems      | Count | Details                                        |
+| ------------------------ | ----- | ---------------------------------------------- |
+| Improper List Structures | \~63  | Includes disordered or malformed list elements |
+
+Accessibility Alerts
+
+| Type                         | Count | Description                                          |
+| ---------------------------- | ----- | ---------------------------------------------------- |
+| Redundant/Incorrect Alt Text | N/A   | Images with duplicate or suspicious alternative text |
+| Missing Fieldsets            | N/A   | Impacts form screen-reader grouping                  |
+| Non-legible Text             | N/A   | Affects readability especially in smaller viewports  |
+
+Positive Accessibility Features
+
+| Feature                       | Count | Notes                                                     |
+| ----------------------------- | ----- | --------------------------------------------------------- |
+| Alternative Text Present      | 8     | Proper `alt` descriptions for a subset of images          |
+| Correctly Labeled Form Fields | Few   | Especially in user info and newsletter subscription forms |
+| Responsive Layout             | -     | Adapts well to various screen sizes                       |
+
+
+4. Sample Issue Format (As Documented in Report)
+
+| Issue ID     | Description                              | Steps to Reproduce                              | Device/Browser                  | Date/Time           | Screenshot     |
+| ------------ | ---------------------------------------- | ----------------------------------------------- | ------------------------------- | ------------------- | -------------- |
+| JUM-001      | Missing `alt` attribute for linked image | Navigate to homepage → Scroll to banner section | Windows 10 / Chrome v111.0.5563 | 27/03/2023, 1:10 PM | Attached       |
+| JUM-002      | Low contrast on button labels            | Navigate to deals section → Observe CTA buttons | Windows 10 / Chrome v111.0.5563 | 27/03/2023, 1:42 PM | Attached       |
+
+
+5. Recommendation
+
+Although the Jumia website performs strongly in terms of speed and basic usability, accessibility issues remain a concern, especially for users with visual impairments. The site partially complies with WCAG 2.1 Level AA, particularly:
+
+   Compliance Example:
+
+ The non-text contrast was measured at 8.59:1, exceeding the required 3:1 minimum ratio under WCAG 2.1 – Criterion 1.4.11 (Non-Text Contrast)
+  [Reference: WCAG 1.4.11 – Non-text Contrast](https://wcag.com/designers/1-4-11-non-text-contrast/)
+
+Recommended Improvements:
+
+1. Add `alt` text to all meaningful images.
+2. Resolve contrast issues on key CTA buttons and text elements.
+3. Ensure all forms have properly labeled fields.
+4. Optimize the DOM structure to improve load times and memory usage.
+
+6. Conclusion.
+
+The exploratory test on the Jumia NG website highlighted several opportunities for improving the user experience and enhancing accessibility. Addressing these findings will improve inclusiveness, satisfaction, and performance for all users, especially those relying on assistive technologies.
+
+
+Would you like me to export this as a downloadable document (PDF or Word), or include charts/tables from the Excel logs for stakeholder reporti
